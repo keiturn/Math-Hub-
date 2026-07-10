@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Diameter Calculator | Math Hub</title>
+
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<!-- Google Font -->
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="diameter.css">
+
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+
+<header>
+
+
+<div class="navbar">
+
+
+<div class="logo">
+
+<i class="fa-solid fa-calculator"></i>
+
+<h2>Math <span>Hub</span></h2>
+
+</div>
+
+
+
+<nav class="nav-links">
+
+
+<a href="index.html">
+
+Home
+
+</a>
+
+
+<a href="calculator.html">
+
+Calculator
+
+</a>
+
+
+<a href="diameter.html" class="active">
+
+Diameter
+
+</a>
+
+
+<a href="area.html">
+
+Area
+
+</a>
+
+
+<a href="volume.html">
+
+Volume
+
+</a>
+
+
+<a href="perimeter.html">
+
+Perimeter
+
+</a>
+
+
+<a href="about.html">
+
+About
+
+</a>
+
+
+</nav>
+
+
+
+<div class="menu-btn">
+
+<i class="fa-solid fa-bars"></i>
+
+</div>
+
+
+
+</div>
+
+
+</header>
+
+
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+
+<section class="page-header">
+
+
+<div class="badge">
+
+<i class="fa-solid fa-circle"></i>
+
+Geometry Calculator
+
+</div>
+
+
+
+<h1>
+
+Diameter <span>Calculator</span>
+
+</h1>
+
+
+
+<p>
+
+Calculate the diameter of a circle quickly and accurately using radius,
+circumference, or area measurements.
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+<!-- ================= HERO SECTION ================= -->
+
+
+<section class="diameter-hero">
+
+
+
+<div class="hero-content">
+
+
+<h1>
+
+Find the Perfect
+
+<span>Diameter</span>
+
+of Any Circle
+
+</h1>
+
+
+
+<p>
+
+The diameter is the distance across a circle passing through its center.
+Math Hub helps students calculate diameter values easily with interactive
+geometry tools.
+
+</p>
+
+
+
+<div class="hero-buttons">
+
+
+<a href="#calculator" class="btn btn-primary">
+
+<i class="fa-solid fa-calculator"></i>
+
+Start Calculating
+
+</a>
+
+
+
+<a href="#formula" class="btn btn-outline">
+
+Learn Formula
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+<div class="hero-card">
+
+
+<i class="fa-solid fa-circle-dot"></i>
+
+
+</div>
+
+
+
+</section>
+<!-- ================= DIAMETER CALCULATOR ================= -->
+
+
+<section class="calculator-section" id="calculator">
+
+
+<div class="section-title">
+
+
+<span>
+
+Interactive Tool
+
+</span>
+
+
+
+<h2>
+
+Diameter Calculator
+
+</h2>
+
+
+
+<p>
+
+Choose the measurement you know and calculate the diameter of your circle instantly.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="calculator-container">
+
+
+
+<!-- ================= RADIUS CARD ================= -->
+
+
+<div class="calculator-card">
+
+
+<i class="fa-solid fa-circle"></i>
+
+
+<h3>
+
+Radius to Diameter
+
+</h3>
+
+
+<p>
+
+Enter the radius of the circle to find its diameter.
+
+</p>
+
+
+
+<div class="input-group">
+
+
+<label>
+
+Radius
+
+</label>
+
+
+<input 
+type="number" 
+id="radiusInput"
+placeholder="Enter radius">
+
+
+
+</div>
+
+
+
+<button class="calculate-btn" onclick="calculateRadiusDiameter()">
+
+Calculate Diameter
+
+</button>
+
+
+
+<div class="result-box">
+
+
+<h4>
+
+Result
+
+</h4>
+
+
+<span id="radiusResult">
+
+0
+
+</span>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- ================= CIRCUMFERENCE CARD ================= -->
+
+
+<div class="calculator-card">
+
+
+<i class="fa-solid fa-arrows-left-right"></i>
+
+
+<h3>
+
+Circumference to Diameter
+
+</h3>
+
+
+<p>
+
+Find the diameter using the circle's circumference value.
+
+</p>
+
+
+
+<div class="input-group">
+
+
+<label>
+
+Circumference
+
+</label>
+
+
+
+<input 
+type="number" 
+id="circumferenceInput"
+placeholder="Enter circumference">
+
+
+
+</div>
+
+
+
+<button class="calculate-btn" onclick="calculateCircumferenceDiameter()">
+
+Calculate Diameter
+
+</button>
+
+
+
+<div class="result-box">
+
+
+<h4>
+
+Result
+
+</h4>
+
+
+<span id="circumferenceResult">
+
+0
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ================= AREA CARD ================= -->
+
+
+<div class="calculator-card">
+
+
+<i class="fa-solid fa-chart-area"></i>
+
+
+
+<h3>
+
+Area to Diameter
+
+</h3>
+
+
+<p>
+
+Calculate the diameter when the area of the circle is given.
+
+</p>
+
+
+
+<div class="input-group">
+
+
+<label>
+
+Circle Area
+
+</label>
+
+
+
+<input 
+type="number" 
+id="areaInput"
+placeholder="Enter area">
+
+
+
+</div>
+
+
+
+<button class="calculate-btn" onclick="calculateAreaDiameter()">
+
+Calculate Diameter
+
+</button>
+
+
+
+<div class="result-box">
+
+
+<h4>
+
+Result
+
+</h4>
+
+
+<span id="areaResult">
+
+0
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- ================= FORMULA SECTION ================= -->
+
+
+<section class="formula-section" id="formula">
+
+
+<div class="section-title">
+
+
+<span>
+
+Quick Reference
+
+</span>
+
+
+<h2>
+
+Diameter Formulas
+
+</h2>
+
+
+
+<p>
+
+Learn the important formulas used to calculate the diameter of a circle.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="function-grid">
+
+
+
+<div class="function-card">
+
+
+<i class="fa-solid fa-circle"></i>
+
+
+<h3>
+
+Radius
+
+</h3>
+
+
+<p>
+
+D = 2r
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="function-card">
+
+
+<i class="fa-solid fa-arrows-left-right"></i>
+
+
+<h3>
+
+Circumference
+
+</h3>
+
+
+<p>
+
+D = C ÷ π
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="function-card">
+
+
+<i class="fa-solid fa-chart-area"></i>
+
+
+<h3>
+
+Area
+
+</h3>
+
+
+<p>
+
+D = 2√(A ÷ π)
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="function-card">
+
+
+<i class="fa-solid fa-circle-dot"></i>
+
+
+<h3>
+
+Circle Center
+
+</h3>
+
+
+<p>
+
+Diameter passes through the center
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+<!-- ================= INSTRUCTIONS ================= -->
+
+
+<section class="instructions">
+
+
+<div class="section-title">
+
+
+<span>
+
+How to Use
+
+</span>
+
+
+
+<h2>
+
+Using the Diameter Calculator
+
+</h2>
+
+
+
+<p>
+
+Follow these simple steps to calculate the diameter of a circle accurately.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="instruction-container">
+
+
+
+<div class="instruction-card">
+
+
+<div class="step-number">
+
+01
+
+</div>
+
+
+<i class="fa-solid fa-ruler"></i>
+
+
+
+<h3>
+
+Choose Measurement
+
+</h3>
+
+
+
+<p>
+
+Select whether you know the radius, circumference, or area of the circle.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="instruction-card">
+
+
+<div class="step-number">
+
+02
+
+</div>
+
+
+<i class="fa-solid fa-keyboard"></i>
+
+
+
+<h3>
+
+Enter Value
+
+</h3>
+
+
+
+<p>
+
+Input the measurement value into the calculator field provided.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="instruction-card">
+
+
+<div class="step-number">
+
+03
+
+</div>
+
+
+
+<i class="fa-solid fa-calculator"></i>
+
+
+
+<h3>
+
+Calculate Result
+
+</h3>
+
+
+
+<p>
+
+Press the calculate button and instantly view the diameter result.
+
+</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+<!-- ================= DIAMETER TIPS ================= -->
+
+
+<section class="tips">
+
+
+<div class="section-title">
+
+
+<span>
+
+Learning Corner
+
+</span>
+
+
+
+<h2>
+
+Diameter Facts & Tips
+
+</h2>
+
+
+
+<p>
+
+Understand important concepts about circles and diameter measurements.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="tips-container">
+
+
+
+<div class="tip-card">
+
+
+<i class="fa-solid fa-circle-info"></i>
+
+
+
+<div>
+
+
+<h3>
+
+Diameter is Twice the Radius
+
+</h3>
+
+
+<p>
+
+The diameter of any circle is always two times longer than its radius.
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="tip-card">
+
+
+<i class="fa-solid fa-crosshairs"></i>
+
+
+
+<div>
+
+
+<h3>
+
+Passes Through Center
+
+</h3>
+
+
+<p>
+
+A diameter must always pass through the exact center point of a circle.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="tip-card">
+
+
+<i class="fa-solid fa-ruler-combined"></i>
+
+
+
+<div>
+
+
+<h3>
+
+Use Correct Units
+
+</h3>
+
+
+<p>
+
+Always use the same unit when measuring radius, area, or circumference.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+
+
+<footer>
+
+
+<div class="footer-container">
+
+
+
+<div class="footer-box">
+
+
+<h3>
+
+Math <span>Hub</span>
+
+</h3>
+
+
+
+<p>
+
+Math Hub is an interactive mathematics platform that helps students understand geometry through simple calculators and visual learning tools.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="footer-box">
+
+
+<h3>
+
+Quick Links
+
+</h3>
+
+
+
+<a href="index.html">
+
+Home
+
+</a>
+
+
+
+<a href="calculator.html">
+
+Calculator
+
+</a>
+
+
+
+<a href="area.html">
+
+Area
+
+</a>
+
+
+
+<a href="volume.html">
+
+Volume
+
+</a>
+
+
+
+<a href="perimeter.html">
+
+Perimeter
+
+</a>
+
+
+
+<a href="diameter.html">
+
+Diameter
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="footer-box">
+
+
+<h3>
+
+Developer
+
+</h3>
+
+
+
+<p>
+
+Created for the Math Hub Web Development project.
+
+</p>
+
+
+
+
+<div class="social-links">
+
+
+<a href="#">
+
+<i class="fab fa-facebook-f"></i>
+
+</a>
+
+
+
+<a href="#">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+
+
+<a href="#">
+
+<i class="fab fa-github"></i>
+
+</a>
+
+
+
+<a href="#">
+
+<i class="fab fa-linkedin-in"></i>
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="footer-bottom">
+
+
+<p>
+
+© 2026 <strong>Math Hub</strong>. All Rights Reserved.
+
+</p>
+
+
+</div>
+
+
+
+</footer>
+
+
+
+
+
+
+<!-- ================= BACK TO TOP ================= -->
+
+
+<button id="topBtn">
+
+
+<i class="fa-solid fa-arrow-up"></i>
+
+
+</button>
+
+
+
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+
+<script>
+
+
+function calculateRadiusDiameter(){
+
+
+let radius = document.getElementById("radiusInput").value;
+
+
+let result = radius * 2;
+
+
+
+document.getElementById("radiusResult").innerHTML =
+
+result.toFixed(2);
+
+
+
+}
+
+
+
+
+
+function calculateCircumferenceDiameter(){
+
+
+let circumference = document.getElementById("circumferenceInput").value;
+
+
+let result = circumference / Math.PI;
+
+
+
+document.getElementById("circumferenceResult").innerHTML =
+
+result.toFixed(2);
+
+
+
+}
+
+
+
+
+
+function calculateAreaDiameter(){
+
+
+let area = document.getElementById("areaInput").value;
+
+
+let result = 2 * Math.sqrt(area / Math.PI);
+
+
+
+document.getElementById("areaResult").innerHTML =
+
+result.toFixed(2);
+
+
+
+}
+
+
+
+
+
+
+// BACK TO TOP
+
+
+let topBtn = document.getElementById("topBtn");
+
+
+
+window.onscroll = function(){
+
+
+if(document.documentElement.scrollTop > 300){
+
+
+topBtn.classList.add("show");
+
+
+}
+
+else{
+
+
+topBtn.classList.remove("show");
+
+
+}
+
+
+};
+
+
+
+
+topBtn.onclick = function(){
+
+
+window.scrollTo({
+
+
+top:0,
+
+
+behavior:"smooth"
+
+
+});
+
+
+};
+
+
+
+</script><script src="script.js"></script>
+
+<script src="js.diameter.js"></script>
+
+
+
+</body>
+
+
+</html>

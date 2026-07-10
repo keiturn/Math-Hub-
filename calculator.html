@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Math Hub | Scientific Calculator</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="calculator.css">
+
+<script src="js.calculator.js" defer></script>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-square-root-variable"></i>
+
+<h2>Math<span>Hub</span></h2>
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="calculator.html" class="active">Calculator</a></li>
+
+<li><a href="diameter.html">Diameter</a></li>
+
+<li><a href="area.html">Area</a></li>
+
+<li><a href="volume.html">Volume</a></li>
+
+<li><a href="perimeter.html">Perimeter</a></li>
+
+<li><a href="about.html">About</a></li>
+
+</ul>
+
+<div class="menu-btn">
+
+<i class="fas fa-bars"></i>
+
+</div>
+
+</nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="page-header">
+
+<div class="page-content">
+
+<span class="badge">
+
+<i class="fa-solid fa-calculator"></i>
+
+Math Hub Tools
+
+</span>
+
+<h1>
+
+Scientific <span>Calculator</span>
+
+</h1>
+
+<p>
+
+Perform basic and advanced mathematical calculations instantly using our
+interactive scientific calculator. Designed for students, teachers, and
+anyone who needs accurate mathematical solutions.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= CALCULATOR ================= -->
+
+<section class="calculator-section">
+
+<div class="calculator-box">
+
+<div class="calculator-top">
+
+<h2>
+
+<i class="fa-solid fa-calculator"></i>
+
+Scientific Calculator
+
+</h2>
+
+<p>
+
+Fast • Accurate • Interactive
+
+</p>
+
+</div>
+
+<div class="display-box">
+
+<input
+type="text"
+id="display"
+placeholder="0"
+readonly>
+
+</div>
+
+<div class="calculator-buttons">
+
+<!-- ROW 1 -->
+
+<button class="gray" onclick="clearDisplay()">AC</button>
+
+<button class="gray" onclick="deleteLast()">DEL</button>
+
+<button class="gray" onclick="appendValue('(')">(</button>
+
+<button class="gray" onclick="appendValue(')')">)</button>
+
+<button class="operator" onclick="appendValue('/')">÷</button>
+
+<!-- ROW 2 -->
+
+<button onclick="squareRoot()">√</button>
+
+<button onclick="cubeRoot()">∛</button>
+
+<button onclick="square()">x²</button>
+
+<button onclick="cube()">x³</button>
+
+<button class="operator" onclick="appendValue('*')">×</button>
+
+<!-- ROW 3 -->
+
+<button onclick="sin()">sin</button>
+
+<button onclick="cos()">cos</button>
+
+<button onclick="tan()">tan</button>
+
+<button onclick="appendValue('%')">%</button>
+
+<button class="operator" onclick="appendValue('-')">−</button>
+
+<!-- ROW 4 -->
+
+<button onclick="appendValue('7')">7</button>
+
+<button onclick="appendValue('8')">8</button>
+
+<button onclick="appendValue('9')">9</button>
+
+<button onclick="power()">xʸ</button>
+
+<button class="operator" onclick="appendValue('+')">+</button>
+
+<!-- ROW 5 -->
+
+<button onclick="appendValue('4')">4</button>
+
+<button onclick="appendValue('5')">5</button>
+
+<button onclick="appendValue('6')">6</button>
+
+<button onclick="log()">log</button>
+
+<button class="equal" onclick="calculate()">=</button>
+
+<!-- ROW 6 -->
+
+<button onclick="appendValue('1')">1</button>
+
+<button onclick="appendValue('2')">2</button>
+
+<button onclick="appendValue('3')">3</button>
+
+<button onclick="ln()">ln</button>
+
+<!-- ROW 7 -->
+
+<button class="zero" onclick="appendValue('0')">0</button>
+
+<button onclick="appendValue('.')">.</button>
+
+<button onclick="pi()">π</button>
+
+<button onclick="euler()">e</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= INSTRUCTIONS ================= -->
+
+<section class="instructions">
+
+<div class="section-title">
+
+<span>HOW TO USE</span>
+
+<h2>Using the Scientific Calculator</h2>
+
+<p>
+
+Follow these simple steps to solve mathematical problems quickly and accurately.
+
+</p>
+
+</div>
+
+<div class="instruction-container">
+            <!-- STEP 1 -->
+
+        <div class="instruction-card">
+
+            <div class="step-number">01</div>
+
+            <i class="fa-solid fa-keyboard"></i>
+
+            <h3>Enter Numbers</h3>
+
+            <p>
+
+                Click the calculator buttons or use your keyboard to
+                enter numbers and mathematical expressions.
+
+            </p>
+
+        </div>
+
+        <!-- STEP 2 -->
+
+        <div class="instruction-card">
+
+            <div class="step-number">02</div>
+
+            <i class="fa-solid fa-square-root-variable"></i>
+
+            <h3>Select a Function</h3>
+
+            <p>
+
+                Choose from basic arithmetic, trigonometric,
+                logarithmic, or exponential operations.
+
+            </p>
+
+        </div>
+
+        <!-- STEP 3 -->
+
+        <div class="instruction-card">
+
+            <div class="step-number">03</div>
+
+            <i class="fa-solid fa-check-circle"></i>
+
+            <h3>View the Answer</h3>
+
+            <p>
+
+                Press the equals (=) button to instantly calculate
+                and display the correct answer.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= SUPPORTED FUNCTIONS ================= -->
+
+<section class="functions">
+
+    <div class="section-title">
+
+        <span>SUPPORTED FUNCTIONS</span>
+
+        <h2>Available Mathematical Operations</h2>
+
+        <p>
+
+            Perform a wide variety of mathematical computations using
+            our built-in scientific functions.
+
+        </p>
+
+    </div>
+
+    <div class="function-grid">
+
+        <div class="function-card">
+            <i class="fa-solid fa-plus"></i>
+            <h3>Addition</h3>
+            <p>Example: 25 + 17</p>
+        </div>
+
+        <div class="function-card">
+            <i class="fa-solid fa-minus"></i>
+            <h3>Subtraction</h3>
+            <p>Example: 40 - 18</p>
+        </div>
+
+        <div class="function-card">
+            <i class="fa-solid fa-xmark"></i>
+            <h3>Multiplication</h3>
+            <p>Example: 12 × 5</p>
+        </div>
+
+        <div class="function-card">
+            <i class="fa-solid fa-divide"></i>
+            <h3>Division</h3>
+            <p>Example: 36 ÷ 9</p>
+        </div>
+
+        <div class="function-card">
+            <i class="fa-solid fa-percent"></i>
+            <h3>Percentage</h3>
+            <p>Example: 80%</p>
+        </div>
+
+        <div class="function-card">
+            <i class="fa-solid fa-square-root-variable"></i>
+            <h3>Square Root</h3>
+            <p>Example: √64</p>
+        </div>
+
+        <div class="function-card">
+            <i class="fa-solid fa-superscript"></i>
+            <h3>Power</h3>
+            <p>x², x³ and xʸ</p>
+        </div>
+
+        <div class="function-card">
+            <i class="fa-solid fa-wave-square"></i>
+            <h3>Trigonometry</h3>
+            <p>sin(), cos(), tan()</p>
+        </div>
+
+        <div class="function-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Logarithms</h3>
+            <p>log() and ln()</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= MATH TIPS ================= -->
+
+<section class="tips">
+
+    <div class="section-title">
+
+        <span>MATHEMATICS TIPS</span>
+
+        <h2>Helpful Reminders</h2>
+
+    </div>
+
+    <div class="tips-container">
+
+        <div class="tip-card">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <p>
+
+                Use parentheses when solving complex expressions
+                to ensure the correct order of operations.
+
+            </p>
+
+        </div>
+
+        <div class="tip-card">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <p>
+
+                Trigonometric functions are calculated in degrees.
+
+            </p>
+
+        </div>
+
+        <div class="tip-card">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <p>
+
+                Always double-check your values before pressing
+                the equals button.
+
+            </p>
+
+        </div>
+
+        <div class="tip-card">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <p>
+
+                Scientific notation and decimal values are fully
+                supported.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="calculator-features">
+
+    <div class="section-title">
+
+        <span>WHY MATH HUB?</span>
+
+        <h2>Calculator Features</h2>
+
+    </div>
+
+    <div class="feature-grid">
+
+        <div class="feature-box">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>Fast Calculation</h3>
+
+            <p>Receive instant mathematical results.</p>
+
+        </div>
+
+        <div class="feature-box">
+
+            <i class="fa-solid fa-bullseye"></i>
+
+            <h3>High Accuracy</h3>
+
+            <p>Reliable formulas for precise answers.</p>
+
+        </div>
+
+        <div class="feature-box">
+
+            <i class="fa-solid fa-mobile-screen"></i>
+
+            <h3>Responsive Design</h3>
+
+            <p>Works perfectly on desktop and mobile devices.</p>
+
+        </div>
+
+        <div class="feature-box">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <h3>Student Friendly</h3>
+
+            <p>Designed to make mathematics easier to learn.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-box">
+
+<h2>Math<span>Hub</span></h2>
+
+<p>
+
+We Learn • We Solve • We Win
+
+</p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Quick Links</h3>
+
+<a href="index.html">Home</a>
+<a href="calculator.html">Calculator</a>
+<a href="diameter.html">Diameter</a>
+<a href="area.html">Area</a>
+<a href="volume.html">Volume</a>
+<a href="perimeter.html">Perimeter</a>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Contact</h3>
+
+<p><i class="fa-solid fa-envelope"></i> mathhub@email.com</p>
+
+<p><i class="fa-solid fa-phone"></i> +639059611618</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>© 2026 <strong>Math Hub</strong>. All Rights Reserved.</p>
+
+
+</div>
+
+</footer>
+
+<button id="topBtn">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+
+
+
+</body>
+
+</html>

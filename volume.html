@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Math Hub | Volume Calculator</title>
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="volume.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-cube"></i>
+
+<h2>Math <span>Hub</span></h2>
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="calculator.html">Calculator</a></li>
+
+<li><a href="diameter.html">Diameter</a></li>
+
+<li><a href="area.html">Area</a></li>
+
+<li><a href="volume.html" class="active">Volume</a></li>
+
+<li><a href="perimeter.html">Perimeter</a></li>
+
+<li><a href="about.html">About</a></li>
+
+</ul>
+
+<div class="menu-btn">
+
+<i class="fa-solid fa-bars"></i>
+
+</div>
+
+</nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="page-header">
+
+<div class="badge">
+
+<i class="fa-solid fa-cube"></i>
+
+3D Geometry Calculator
+
+</div>
+
+<h1>
+
+Volume <span>Calculator</span>
+
+</h1>
+
+<p>
+
+Calculate the volume of common three-dimensional figures instantly using accurate mathematical formulas. Enter the required measurements and let Math Hub solve the problem for you.
+
+</p>
+
+</section>
+
+<!-- ================= VOLUME ================= -->
+
+<section class="volume-section">
+
+<div class="section-title">
+
+<span>3D Geometry</span>
+
+<h2>Choose a Solid Figure</h2>
+
+<p>
+
+Select a solid figure below, enter the required dimensions, and click Calculate to determine its volume.
+
+</p>
+
+</div>
+
+<div class="function-grid">
+
+<!-- Cube -->
+
+<div class="function-card">
+
+<i class="fa-solid fa-cube"></i>
+
+<h3>Cube</h3>
+
+<p>Volume = Side³</p>
+
+<input
+type="number"
+id="cubeSide"
+placeholder="Side Length">
+
+<button onclick="cubeVolume()">
+
+Calculate
+
+</button>
+
+<h4 id="cubeAnswer" class="answer"></h4>
+
+</div>
+
+<!-- Rectangular Prism -->
+
+<div class="function-card">
+
+<i class="fa-solid fa-box"></i>
+
+<h3>Rectangular Prism</h3>
+
+<p>Volume = Length × Width × Height</p>
+
+<input
+type="number"
+id="rectLength"
+placeholder="Length">
+
+<input
+type="number"
+id="rectWidth"
+placeholder="Width">
+
+<input
+type="number"
+id="rectHeight"
+placeholder="Height">
+
+<button onclick="rectangularPrism()">
+
+Calculate
+
+</button>
+
+<h4 id="rectAnswer" class="answer"></h4>
+
+</div>
+        <!-- Cylinder -->
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-database"></i>
+
+            <h3>Cylinder</h3>
+
+            <p>Volume = π × r² × h</p>
+
+            <input
+            type="number"
+            id="cylRadius"
+            placeholder="Radius">
+
+            <input
+            type="number"
+            id="cylHeight"
+            placeholder="Height">
+
+            <button onclick="cylinderVolume()">
+
+                Calculate
+
+            </button>
+
+            <h4 id="cylAnswer" class="answer"></h4>
+
+        </div>
+
+        <!-- Cone -->
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-ice-cream"></i>
+
+            <h3>Cone</h3>
+
+            <p>Volume = (π × r² × h) ÷ 3</p>
+
+            <input
+            type="number"
+            id="coneRadius"
+            placeholder="Radius">
+
+            <input
+            type="number"
+            id="coneHeight"
+            placeholder="Height">
+
+            <button onclick="coneVolume()">
+
+                Calculate
+
+            </button>
+
+            <h4 id="coneAnswer" class="answer"></h4>
+
+        </div>
+
+        <!-- Sphere -->
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-globe"></i>
+
+            <h3>Sphere</h3>
+
+            <p>Volume = (4/3) × π × r³</p>
+
+            <input
+            type="number"
+            id="sphereRadius"
+            placeholder="Radius">
+
+            <button onclick="sphereVolume()">
+
+                Calculate
+
+            </button>
+
+            <h4 id="sphereAnswer" class="answer"></h4>
+
+        </div>
+
+        <!-- Pyramid -->
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-mountain"></i>
+
+            <h3>Pyramid</h3>
+
+            <p>Volume = (Length × Width × Height) ÷ 3</p>
+
+            <input
+            type="number"
+            id="pyramidLength"
+            placeholder="Length">
+
+            <input
+            type="number"
+            id="pyramidWidth"
+            placeholder="Width">
+
+            <input
+            type="number"
+            id="pyramidHeight"
+            placeholder="Height">
+
+            <button onclick="pyramidVolume()">
+
+                Calculate
+
+            </button>
+
+            <h4 id="pyramidAnswer" class="answer"></h4>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= INSTRUCTIONS ================= -->
+
+<section class="instructions">
+
+    <div class="section-title">
+
+        <span>How to Use</span>
+
+        <h2>Using the Volume Calculator</h2>
+
+        <p>
+
+            Follow these simple steps to calculate the volume of any three-dimensional figure accurately.
+
+        </p>
+
+    </div>
+
+    <div class="instruction-container">
+
+        <div class="instruction-card">
+
+            <div class="step-number">01</div>
+
+            <i class="fa-solid fa-cube"></i>
+
+            <h3>Select a Solid Figure</h3>
+
+            <p>
+
+                Choose the three-dimensional figure that matches the object you want to calculate.
+
+            </p>
+
+        </div>
+
+        <div class="instruction-card">
+
+            <div class="step-number">02</div>
+
+            <i class="fa-solid fa-ruler-combined"></i>
+
+            <h3>Enter the Measurements</h3>
+
+            <p>
+
+                Type the required values such as length, width, height, or radius into the input boxes.
+
+            </p>
+
+        </div>
+
+        <div class="instruction-card">
+
+            <div class="step-number">03</div>
+
+            <i class="fa-solid fa-calculator"></i>
+
+            <h3>Calculate</h3>
+
+            <p>
+
+                Click the <strong>Calculate</strong> button to instantly display the correct volume of the selected solid figure.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= GEOMETRY TIPS ================= -->
+
+<section class="tips">
+
+    <div class="section-title">
+
+        <span>Learning Corner</span>
+
+        <h2>3D Geometry Tips</h2>
+
+        <p>
+
+            Understanding these tips will help you solve volume problems more accurately and improve your mathematical skills.
+
+        </p>
+
+    </div>
+
+    <div class="tips-container">
+
+        <div class="tip-card">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <div>
+
+                <h3>Use the Correct Formula</h3>
+
+                <p>
+
+                    Every three-dimensional figure has its own volume formula. Always identify the correct shape before solving.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="tip-card">
+
+            <i class="fa-solid fa-ruler"></i>
+
+            <div>
+
+                <h3>Measure Carefully</h3>
+
+                <p>
+
+                    Ensure that all dimensions use the same unit of measurement before calculating the volume.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="tip-card">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <div>
+
+                <h3>Review Your Answer</h3>
+
+                <p>
+
+                    Double-check every measurement before pressing the Calculate button to avoid mistakes.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FORMULA GUIDE ================= -->
+
+<section class="formula-section">
+
+    <div class="section-title">
+
+        <span>Quick Reference</span>
+
+        <h2>Common Volume Formulas</h2>
+
+        <p>
+
+            Use these formulas as a quick guide when solving volume problems manually.
+
+        </p>
+
+    </div>
+
+    <div class="function-grid">
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-cube"></i>
+
+            <h3>Cube</h3>
+
+            <p><strong>V = s³</strong></p>
+
+        </div>
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-box"></i>
+
+            <h3>Rectangular Prism</h3>
+
+            <p><strong>V = l × w × h</strong></p>
+
+        </div>
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-database"></i>
+
+            <h3>Cylinder</h3>
+
+            <p><strong>V = πr²h</strong></p>
+
+        </div>
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-ice-cream"></i>
+
+            <h3>Cone</h3>
+
+            <p><strong>V = ⅓πr²h</strong></p>
+
+        </div>
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-globe"></i>
+
+            <h3>Sphere</h3>
+
+            <p><strong>V = ⁴⁄₃πr³</strong></p>
+
+        </div>
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-mountain"></i>
+
+            <h3>Pyramid</h3>
+
+            <p><strong>V = ⅓lwh</strong></p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h3>Math <span>Hub</span></h3>
+
+            <p>
+
+                Math Hub is your all-in-one mathematics learning platform. Solve volume problems accurately using interactive calculators and easy-to-understand formulas.
+
+            </p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="calculator.html">Calculator</a>
+            <a href="diameter.html">Diameter</a>
+            <a href="area.html">Area</a>
+            <a href="perimeter.html">Perimeter</a>
+            <a href="about.html">About</a>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Developer</h3>
+
+            <p>
+
+                Developed as part of the <strong>Math Hub</strong> project to help students learn mathematics through interactive tools.
+
+            </p>
+
+            <p>
+
+                Designed with a modern Apple-inspired minimalist interface.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            © 2026 <strong>Math Hub</strong>. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button id="topBtn">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+<script src="js.volume.js"></script>
+
+</body>
+
+</html>

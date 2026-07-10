@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Math Hub | Area Calculator</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="area.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-square-root-variable"></i>
+
+            <h2>Math <span>Hub</span></h2>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="calculator.html">Calculator</a></li>
+
+            <li><a href="diameter.html">Diameter</a></li>
+
+            <li><a href="area.html" class="active">Area</a></li>
+
+            <li><a href="volume.html">Volume</a></li>
+
+            <li><a href="perimeter.html">Perimeter</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+        </ul>
+
+        <div class="menu-btn">
+
+            <i class="fas fa-bars"></i>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="page-header">
+
+    <div class="badge">
+
+        <i class="fa-solid fa-shapes"></i>
+
+        Geometry Calculator
+
+    </div>
+
+    <h1>
+
+        Area <span>Calculator</span>
+
+    </h1>
+
+    <p>
+
+        Calculate the area of common geometric figures instantly. Simply enter the required measurements, and Math Hub will compute accurate results in seconds.
+
+    </p>
+
+</section>
+
+<!-- ================= AREA SECTION ================= -->
+
+<section class="area-section">
+
+    <div class="section-title">
+
+        <span>Geometry Tools</span>
+
+        <h2>Choose a Shape</h2>
+
+        <p>
+
+            Select a geometric figure below and enter the required measurements to calculate its area quickly and accurately.
+
+        </p>
+
+    </div>
+
+    <div class="function-grid">
+
+        <!-- Rectangle -->
+
+        <div class="function-card">
+
+            <i class="fa-regular fa-square"></i>
+
+            <h3>Rectangle</h3>
+
+            <p>Area = Length × Width</p>
+
+            <input
+            type="number"
+            id="rectLength"
+            placeholder="Length">
+
+            <input
+            type="number"
+            id="rectWidth"
+            placeholder="Width">
+
+            <button onclick="calculateRectangleArea()">
+    Calculate
+</button>
+
+            <h4 id="rectangleAnswer" class="answer"></h4>
+
+        </div>
+
+        <!-- Square -->
+
+        <div class="function-card">
+
+            <i class="fa-regular fa-square-full"></i>
+
+            <h3>Square</h3>
+
+            <p>Area = Side²</p>
+
+            <input
+            type="number"
+            id="squareSide"
+            placeholder="Side Length">
+
+          <button onclick="calculateSquareArea()">
+    Calculate
+</button>
+
+            <h4 id="squareAnswer" class="answer"></h4>
+
+        </div>
+                <!-- Triangle -->
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-play"></i>
+
+            <h3>Triangle</h3>
+
+            <p>Area = ½ × Base × Height</p>
+
+            <input
+            type="number"
+            id="triangleBase"
+            placeholder="Base">
+
+            <input
+            type="number"
+            id="triangleHeight"
+            placeholder="Height">
+
+            <button onclick="triangleArea()">
+
+                Calculate
+
+            </button>
+
+            <h4 id="triangleAnswer" class="answer"></h4>
+
+        </div>
+
+        <!-- Circle -->
+
+        <div class="function-card">
+
+            <i class="fa-regular fa-circle"></i>
+
+            <h3>Circle</h3>
+
+            <p>Area = πr²</p>
+
+            <input
+            type="number"
+            id="circleRadius"
+            placeholder="Radius">
+
+            <button onclick="circleArea()">
+
+                Calculate
+
+            </button>
+
+            <h4 id="circleAnswer" class="answer"></h4>
+
+        </div>
+
+        <!-- Parallelogram -->
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-diamond"></i>
+
+            <h3>Parallelogram</h3>
+
+            <p>Area = Base × Height</p>
+
+            <input
+            type="number"
+            id="paraBase"
+            placeholder="Base">
+
+            <input
+            type="number"
+            id="paraHeight"
+            placeholder="Height">
+
+            <button onclick="parallelogramArea()">
+
+                Calculate
+
+            </button>
+
+            <h4 id="paraAnswer" class="answer"></h4>
+
+        </div>
+                <!-- Trapezoid -->
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-draw-polygon"></i>
+
+            <h3>Trapezoid</h3>
+
+            <p>Area = ((Base₁ + Base₂) × Height) ÷ 2</p>
+
+            <input
+            type="number"
+            id="trapBase1"
+            placeholder="Base 1">
+
+            <input
+            type="number"
+            id="trapBase2"
+            placeholder="Base 2">
+
+            <input
+            type="number"
+            id="trapHeight"
+            placeholder="Height">
+
+            <button onclick="trapezoidArea()">
+
+                Calculate
+
+            </button>
+
+            <h4 id="trapAnswer" class="answer"></h4>
+
+        </div>
+
+        <!-- Rhombus -->
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-gem"></i>
+
+            <h3>Rhombus</h3>
+
+            <p>Area = (Diagonal₁ × Diagonal₂) ÷ 2</p>
+
+            <input
+            type="number"
+            id="rhombusD1"
+            placeholder="Diagonal 1">
+
+            <input
+            type="number"
+            id="rhombusD2"
+            placeholder="Diagonal 2">
+
+            <button onclick="rhombusArea()">
+
+                Calculate
+
+            </button>
+
+            <h4 id="rhombusAnswer" class="answer"></h4>
+
+        </div>
+
+        <!-- Kite -->
+
+        <div class="function-card">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            <h3>Kite</h3>
+
+            <p>Area = (Diagonal₁ × Diagonal₂) ÷ 2</p>
+
+            <input
+            type="number"
+            id="kiteD1"
+            placeholder="Diagonal 1">
+
+            <input
+            type="number"
+            id="kiteD2"
+            placeholder="Diagonal 2">
+
+            <button onclick="kiteArea()">
+
+                Calculate
+
+            </button>
+
+            <h4 id="kiteAnswer" class="answer"></h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= INSTRUCTIONS ================= -->
+
+<section class="instructions">
+
+    <div class="section-title">
+
+        <span>How to Use</span>
+
+        <h2>Using the Area Calculator</h2>
+
+        <p>
+
+            Follow these simple steps to calculate the area of your chosen geometric figure accurately.
+
+        </p>
+
+    </div>
+
+    <div class="instruction-container">
+
+        <div class="instruction-card">
+
+            <div class="step-number">01</div>
+
+            <i class="fa-solid fa-shapes"></i>
+
+            <h3>Select a Shape</h3>
+
+            <p>
+
+                Choose the geometric figure you want to calculate from the available cards.
+
+            </p>
+
+        </div>
+
+        <div class="instruction-card">
+
+            <div class="step-number">02</div>
+
+            <i class="fa-solid fa-keyboard"></i>
+
+            <h3>Enter Measurements</h3>
+
+            <p>
+
+                Input the required values such as length, width, base, height, radius, or diagonals.
+
+            </p>
+
+        </div>
+
+        <div class="instruction-card">
+
+            <div class="step-number">03</div>
+
+            <i class="fa-solid fa-calculator"></i>
+
+            <h3>Calculate</h3>
+
+            <p>
+
+                Click the <strong>Calculate</strong> button to instantly display the correct area.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= GEOMETRY TIPS ================= -->
+
+<section class="tips">
+
+    <div class="section-title">
+
+        <span>Learning Corner</span>
+
+        <h2>Geometry Tips</h2>
+
+        <p>
+
+            Improve your understanding of geometry by remembering these helpful tips when solving area problems.
+
+        </p>
+
+    </div>
+
+    <div class="tips-container">
+
+        <div class="tip-card">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <div>
+
+                <h3>Use the Correct Formula</h3>
+
+                <p>
+
+                    Every geometric figure has its own area formula. Make sure you identify the shape correctly before calculating.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="tip-card">
+
+            <i class="fa-solid fa-ruler-combined"></i>
+
+            <div>
+
+                <h3>Check Your Units</h3>
+
+                <p>
+
+                    Always use the same unit of measurement for every value to obtain an accurate answer.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="tip-card">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <div>
+
+                <h3>Review Your Answer</h3>
+
+                <p>
+
+                    Double-check the measurements you entered before pressing the Calculate button.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h3>Math <span>Hub</span></h3>
+
+            <p>
+
+                Your all-in-one mathematics learning platform designed to help students solve mathematical problems quickly, accurately, and confidently.
+
+            </p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="calculator.html">Calculator</a>
+            <a href="diameter.html">Diameter</a>
+            <a href="volume.html">Volume</a>
+            <a href="perimeter.html">Perimeter</a>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Developer</h3>
+
+            <p>
+
+                Created for the <strong>Math Hub</strong> project.
+
+            </p>
+
+            <p>
+
+                Designed with a modern Apple-inspired minimalist interface.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            © 2026 <strong>Math Hub</strong>. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button id="topBtn">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+<script src="js.area.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1447 @@
+/*=====================================================
+            MATH HUB SCIENTIFIC CALCULATOR
+        Apple Inspired Red Theme
+======================================================*/
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/*=====================================================
+                    VARIABLES
+======================================================*/
+
+:root{
+
+    --primary:#ff2d55;
+    --primary-dark:#d7003a;
+    --primary-light:#ff5c7f;
+
+    --background:#050505;
+    --background2:#111111;
+
+    --white:#ffffff;
+    --text:#f5f5f7;
+    --gray:#a1a1aa;
+
+    --glass:rgba(255,255,255,.06);
+
+    --border:rgba(255,255,255,.08);
+
+    --shadow:0 20px 60px rgba(0,0,0,.45);
+
+    --radius:24px;
+
+    --transition:.35s ease;
+
+}
+
+/*=====================================================
+                    RESET
+======================================================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:linear-gradient(180deg,#050505,#090909,#111111);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+/*=====================================================
+                SCROLLBAR
+======================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#090909;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/*=====================================================
+                    LINKS
+======================================================*/
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+/*=====================================================
+                    HEADER
+======================================================*/
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(5,5,5,.75);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+/*=====================================================
+                    NAVBAR
+======================================================*/
+
+.navbar{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 0;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.logo i{
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+}
+
+.logo h2{
+
+    font-size:1.8rem;
+
+    font-weight:800;
+
+}
+
+.logo span{
+
+    color:var(--primary);
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    position:relative;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.nav-links a.active{
+
+    color:var(--primary);
+
+}
+
+.nav-links a:hover{
+
+    color:var(--primary);
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--primary);
+
+    left:0;
+
+    bottom:-8px;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+.menu-btn{
+
+    display:none;
+
+    font-size:1.6rem;
+
+    cursor:pointer;
+
+}
+
+/*=====================================================
+                PAGE HEADER
+======================================================*/
+
+.page-header{
+
+    width:92%;
+
+    max-width:1200px;
+
+    margin:140px auto 70px;
+
+    text-align:center;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 22px;
+
+    background:rgba(255,45,85,.15);
+
+    color:var(--primary);
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+.page-header h1{
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+
+}
+
+.page-header h1 span{
+
+    color:var(--primary);
+
+}
+
+.page-header p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:var(--gray);
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+
+}
+
+/*=====================================================
+            CALCULATOR SECTION
+======================================================*/
+
+.calculator-section{
+
+    width:92%;
+
+    max-width:1200px;
+
+    margin:70px auto;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.calculator-box{
+
+    width:100%;
+
+    max-width:650px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:32px;
+
+    backdrop-filter:blur(20px);
+
+    padding:35px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+
+}
+
+/*=====================================================
+            CALCULATOR HEADER
+======================================================*/
+
+.calculator-top{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.calculator-top h2{
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+
+}
+
+.calculator-top i{
+
+    color:var(--primary);
+
+    margin-right:10px;
+
+}
+
+.calculator-top p{
+
+    color:var(--gray);
+
+}
+
+/*=====================================================
+            DISPLAY
+======================================================*/
+
+.display-box{
+
+    margin-bottom:30px;
+
+}
+
+#display{
+
+    width:100%;
+
+    height:90px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:20px;
+
+    background:#111;
+
+    color:white;
+
+    text-align:right;
+
+    padding:0 25px;
+
+    font-size:2.2rem;
+
+    font-weight:700;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:inset 0 0 20px rgba(0,0,0,.35);
+
+}
+/*=====================================================
+                CALCULATOR BUTTONS
+======================================================*/
+
+.calculator-buttons{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:16px;
+
+}
+
+/*=====================================================
+                DEFAULT BUTTON
+======================================================*/
+
+.calculator-buttons button{
+
+    height:68px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.06);
+
+    color:var(--white);
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+}
+
+/*=====================================================
+                HOVER EFFECT
+======================================================*/
+
+.calculator-buttons button:hover{
+
+    transform:translateY(-5px);
+
+    background:rgba(255,45,85,.15);
+
+    border-color:var(--primary);
+
+    box-shadow:0 15px 30px rgba(255,45,85,.25);
+
+}
+
+/*=====================================================
+                CLICK EFFECT
+======================================================*/
+
+.calculator-buttons button:active{
+
+    transform:scale(.96);
+
+}
+
+/*=====================================================
+                OPERATOR BUTTONS
+======================================================*/
+
+.operator{
+
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark)) !important;
+
+    color:#fff !important;
+
+    font-size:1.3rem !important;
+
+    box-shadow:0 10px 25px rgba(255,45,85,.35);
+
+}
+
+.operator:hover{
+
+    background:linear-gradient(135deg,var(--primary-light),var(--primary)) !important;
+
+    box-shadow:0 18px 35px rgba(255,45,85,.50);
+
+}
+
+/*=====================================================
+                FUNCTION BUTTONS
+======================================================*/
+
+.gray{
+
+    background:#181818 !important;
+
+    color:#f5f5f7 !important;
+
+}
+
+.gray:hover{
+
+    background:#222 !important;
+
+}
+
+/*=====================================================
+                EQUAL BUTTON
+======================================================*/
+
+.equal{
+
+    background:linear-gradient(135deg,#ff2d55,#ff5c7f) !important;
+
+    color:white !important;
+
+    font-size:1.5rem !important;
+
+    font-weight:800;
+
+    box-shadow:0 15px 35px rgba(255,45,85,.45);
+
+}
+
+.equal:hover{
+
+    background:linear-gradient(135deg,#ff5c7f,#ff2d55) !important;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 20px 40px rgba(255,45,85,.60);
+
+}
+
+/*=====================================================
+                ZERO BUTTON
+======================================================*/
+
+.zero{
+
+    grid-column:span 2;
+
+}
+
+/*=====================================================
+                DISPLAY ANIMATION
+======================================================*/
+
+#display{
+
+    transition:.3s;
+
+}
+
+#display:focus{
+
+    border-color:var(--primary);
+
+}
+
+/*=====================================================
+                CALCULATOR GLOW
+======================================================*/
+
+.calculator-box:hover{
+
+    border-color:rgba(255,45,85,.30);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.50),
+        0 0 40px rgba(255,45,85,.15);
+
+}
+
+/*=====================================================
+                BUTTON ICON EFFECT
+======================================================*/
+
+.calculator-buttons button i{
+
+    pointer-events:none;
+
+}
+
+/*=====================================================
+                SMOOTH APPEAR
+======================================================*/
+
+.calculator-box{
+
+    animation:fadeCalculator .8s ease;
+
+}
+
+@keyframes fadeCalculator{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/*=====================================================
+                SECTION TITLES
+======================================================*/
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-title span{
+
+    display:inline-block;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+
+}
+
+.section-title h2{
+
+    font-size:2.8rem;
+
+    margin-bottom:20px;
+
+}
+
+.section-title p{
+
+    max-width:720px;
+
+    margin:auto;
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+/*=====================================================
+                INSTRUCTIONS
+======================================================*/
+
+.instructions{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:130px auto;
+
+}
+
+.instruction-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+}
+
+.instruction-card{
+
+    position:relative;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+.instruction-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 20px 45px rgba(255,45,85,.20);
+
+}
+
+.step-number{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    color:rgba(255,255,255,.05);
+
+}
+
+.instruction-card i{
+
+    width:80px;
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    border-radius:22px;
+
+    background:rgba(255,45,85,.15);
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+}
+
+.instruction-card h3{
+
+    margin-bottom:15px;
+
+    font-size:1.5rem;
+
+}
+
+.instruction-card p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+/*=====================================================
+                FUNCTIONS
+======================================================*/
+
+.functions{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:130px auto;
+
+}
+
+.function-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+}
+
+.function-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    text-align:center;
+
+    backdrop-filter:blur(18px);
+
+    transition:.35s;
+
+}
+
+.function-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 20px 40px rgba(255,45,85,.18);
+
+}
+
+.function-card i{
+
+    font-size:2.5rem;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.function-card h3{
+
+    margin-bottom:12px;
+
+    font-size:1.35rem;
+
+}
+
+.function-card p{
+
+    color:var(--gray);
+
+    line-height:1.7;
+
+}
+
+/*=====================================================
+                MATH TIPS
+======================================================*/
+
+.tips{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:130px auto;
+
+}
+
+.tips-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+}
+
+.tip-card{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    transition:.35s;
+
+}
+
+.tip-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 18px 35px rgba(255,45,85,.18);
+
+}
+
+.tip-card i{
+
+    color:var(--primary);
+
+    font-size:1.8rem;
+
+    margin-top:4px;
+
+}
+
+.tip-card p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+/*=====================================================
+                CALCULATOR FEATURES
+======================================================*/
+
+.calculator-features{
+
+    width:92%;
+    max-width:1400px;
+    margin:130px auto;
+
+}
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+.feature-box{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:26px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+
+}
+
+.feature-box:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 20px 45px rgba(255,45,85,.20);
+
+}
+
+.feature-box i{
+
+    width:75px;
+
+    height:75px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    border-radius:20px;
+
+    background:rgba(255,45,85,.15);
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+}
+
+.feature-box h3{
+
+    font-size:1.5rem;
+
+    margin-bottom:15px;
+
+}
+
+.feature-box p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+/*=====================================================
+                CALL TO ACTION
+======================================================*/
+
+.cta{
+
+    width:92%;
+}
+/*=====================================================
+                RESPONSIVE DESIGN
+======================================================*/
+
+@media(max-width:1200px){
+
+.page-header h1{
+
+    font-size:3.5rem;
+
+}
+
+.calculator-box{
+
+    max-width:700px;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.nav-links{
+
+    position:fixed;
+
+    top:80px;
+
+    left:-100%;
+
+    width:100%;
+
+    height:calc(100vh - 80px);
+
+    background:#090909;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    transition:.4s;
+
+}
+
+.nav-links.active{
+
+    left:0;
+
+}
+
+.menu-btn{
+
+    display:block;
+
+}
+
+.page-header{
+
+    margin-top:120px;
+
+}
+
+.page-header h1{
+
+    font-size:3rem;
+
+}
+
+.calculator-buttons{
+
+    grid-template-columns:repeat(5,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.page-header h1{
+
+    font-size:2.5rem;
+
+}
+
+.page-header p{
+
+    font-size:1rem;
+
+}
+
+.calculator-box{
+
+    padding:25px;
+
+}
+
+.calculator-buttons{
+
+    gap:12px;
+
+}
+
+.calculator-buttons button{
+
+    height:60px;
+
+    font-size:1rem;
+
+}
+
+#display{
+
+    height:75px;
+
+    font-size:1.8rem;
+
+}
+
+.instruction-container,
+
+.function-grid,
+
+.tips-container,
+
+.feature-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.footer-container{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.page-header h1{
+
+    font-size:2rem;
+
+}
+
+.badge{
+
+    font-size:.9rem;
+
+    padding:8px 18px;
+
+}
+
+.calculator-box{
+
+    padding:18px;
+
+}
+
+.calculator-buttons{
+
+    gap:10px;
+
+}
+
+.calculator-buttons button{
+
+    height:55px;
+
+    border-radius:14px;
+
+    font-size:.95rem;
+
+}
+
+#display{
+
+    height:65px;
+
+    font-size:1.5rem;
+
+    padding:0 15px;
+
+}
+
+.section-title h2{
+
+    font-size:2rem;
+
+}
+
+.section-title p{
+
+    font-size:.95rem;
+
+}
+
+}
+
+/*=====================================================
+                FADE ANIMATION
+======================================================*/
+
+.hidden{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:all .8s ease;
+
+}
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.page-header{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.calculator-box{
+
+    animation:fadeUp 1s ease;
+
+}
+
+.instruction-card{
+
+    animation:fadeUp 1.1s ease;
+
+}
+
+.function-card{
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+.tip-card{
+
+    animation:fadeUp 1.3s ease;
+
+}
+
+.feature-box{
+
+    animation:fadeUp 1.4s ease;
+
+}
+
+/*=====================================================
+                BUTTON TRANSITIONS
+======================================================*/
+
+button{
+
+    transition:all .3s ease;
+
+}
+
+button:hover{
+
+    cursor:pointer;
+
+}
+
+/*=====================================================
+                IMAGE SETTINGS
+======================================================*/
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/*=====================================================
+                UTILITY CLASSES
+======================================================*/
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-1{
+
+    margin-top:10px;
+
+}
+
+.mt-2{
+
+    margin-top:20px;
+
+}
+
+.mt-3{
+
+    margin-top:30px;
+
+}
+
+.mb-1{
+
+    margin-bottom:10px;
+
+}
+
+.mb-2{
+
+    margin-bottom:20px;
+
+}
+
+.mb-3{
+
+    margin-bottom:30px;
+
+}
+
+.rounded{
+
+    border-radius:var(--radius);
+
+}
+
+.shadow{
+
+    box-shadow:var(--shadow);
+
+}
+
+/*=====================================================
+                END OF CALCULATOR CSS
+======================================================*/
