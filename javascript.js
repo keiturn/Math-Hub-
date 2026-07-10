@@ -11,26 +11,49 @@
         MOBILE MENU
 ==============================*/
 
+const menuBtn = document.querySelector(".menu-btn");
+const navLinks = document.querySelector(".nav-links");
+const menuIcon = menuBtn ? menuBtn.querySelector("i") : null;
 
-let menuBtn = document.querySelector(".menu-btn");
+if (menuBtn && navLinks) {
 
-let navLinks = document.querySelector(".nav-links");
-
-
-
-if(menuBtn && navLinks){
-
-
-    menuBtn.onclick = () =>{
-
+    menuBtn.addEventListener("click", () => {
 
         navLinks.classList.toggle("active");
 
+        if (menuIcon) {
 
-    };
+            if (navLinks.classList.contains("active")) {
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-xmark");
+            } else {
+                menuIcon.classList.remove("fa-xmark");
+                menuIcon.classList.add("fa-bars");
+            }
 
+        }
+
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+            if (menuIcon) {
+                menuIcon.classList.remove("fa-xmark");
+                menuIcon.classList.add("fa-bars");
+            }
+
+        });
+
+    });
 
 }
+
+
+
 
 
 
