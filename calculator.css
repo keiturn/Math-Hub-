@@ -1128,7 +1128,11 @@ header{
 
 .menu-btn{
 
-    display:block;
+    display:none;
+    font-size:30px;
+    color:#fff;
+    cursor:pointer;
+    z-index:1002;
 
 }
 
@@ -1154,11 +1158,40 @@ header{
 
 @media(max-width:768px){
 
-.page-header h1{
+.menu-btn{
+    display:block;
+}
 
-    font-size:2.5rem;
+.nav-links{
+
+    position:fixed;
+
+    top:80px;
+    left:-100%;
+
+    width:100%;
+    height:calc(100vh - 80px);
+
+    background:#090909;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+
+    transition:left .35s ease;
+
+    z-index:1000;
 
 }
+
+.nav-links.active{
+
+    left:0;
+
+}
+
 
 .page-header p{
 
